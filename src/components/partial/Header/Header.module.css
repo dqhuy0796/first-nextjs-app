@@ -1,0 +1,25 @@
+.header {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    background-color: transparent;
+    transition: ease-in-out 0.3s;
+}
+.header.scrolled{
+    background-color: var(--color-secondary);
+    animation: float 0.3s ease-in-out;
+    transform-origin: top;
+}
+@keyframes float {
+    from {
+        transform: translateY(-50%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

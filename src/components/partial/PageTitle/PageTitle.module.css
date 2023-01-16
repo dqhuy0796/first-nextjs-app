@@ -1,0 +1,27 @@
+.title {
+    position: relative;
+    padding: 115px 0 35px 0;
+    text-align: center;
+}
+.title::after {
+    position: absolute;
+    content: '';
+    width: 2px;
+    height: 100px;
+    top: 0;
+    left: 50%;
+    margin-left: 1px;
+    background: #da9f5b;
+}
+.title h4 {
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-primary);
+}
+.title h1 {
+    font-size: 48px;
+    margin-bottom: 12px;
+    text-transform: capitalize;
+    color: var(--color-secondary);
+}

@@ -1,0 +1,129 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px 16px;
+    min-width: 120px;
+    min-height: 40px;
+
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark);
+    background-color: var(--color-light);
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+.button::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    inset: -10%;
+    background: linear-gradient(125deg, transparent 40%, #fff5 60%, transparent 80%);
+    background-size: 400%;
+    transition: ease-out 0.3s;
+}
+.button:hover {
+    box-shadow: 0 1px 3px 1px var(--color-shadow);
+}
+.button:hover::after {
+    animation: Slide 5s linear infinite;
+}
+
+@keyframes Slide {
+    from {
+        background-position: 400%;
+    }
+    to {
+        background-position: 0%;
+    }
+}
+
+/* SIZE */
+
+.button.mini {
+    height: 40px;
+    font-size: 14px;
+}
+.button.normal {
+    height: 48px;
+    font-size: 16px;
+}
+.button.large {
+    height: 56px;
+    font-size: 18px;
+}
+
+/* SHAPE */
+
+.button.rect {
+    border-radius: 0;
+}
+.button.rounded {
+    border-radius: 4px;
+}
+.button.pill {
+    border-radius: 999px;
+}
+
+/* COLOR */
+.button.light {
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    border-color: var(--color-border);
+}
+.button.primary {
+    color: #fff;
+    background-color: var(--color-primary);
+}
+.button.dark {
+    color: #fff;
+    background-color: var(--color-dark);
+}
+.button.gold {
+    color: #fff;
+    text-shadow: 0 0 1px #000;
+    background: radial-gradient(
+            ellipse farthest-corner at right bottom,
+            #fedb37 0%,
+            #fdb931 8%,
+            #9f7928 30%,
+            #8a6e2f 40%,
+            transparent 80%
+        ),
+        radial-gradient(
+            ellipse farthest-corner at left top,
+            #ffffff 0%,
+            #ffffac 8%,
+            #d1b464 25%,
+            #5d4a1f 62.5%,
+            #5d4a1f 100%
+        );
+    border-color: #d1b464;
+}
+.button.info {
+    color: #fff;
+    background-color: var(--color-info);
+}
+.button.success {
+    color: #fff;
+    background-color: var(--color-success);
+}
+.button.warning {
+    color: #fff;
+    background-color: var(--color-warning);
+}
+.button.error {
+    color: #fff;
+    background-color: var(--color-error);
+}
+.button.cancel {
+    color: var(--color-dark);
+    background-color: var(--color-border);
+}

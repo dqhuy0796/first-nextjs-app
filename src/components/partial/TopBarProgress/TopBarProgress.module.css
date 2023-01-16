@@ -1,0 +1,25 @@
+.bar {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    overflow: hidden;
+}
+.progress {
+    height: 100%;
+    width: 99%;
+    background: linear-gradient(to right, #fffbf2, #d9c59c, #d1b464);
+    /* background: var(--gradient-gold); */
+    transform-origin: left;
+    animation: grow 1.5s linear forwards;
+}
+@keyframes grow {
+    from {
+        transform: scaleX(0.005);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}

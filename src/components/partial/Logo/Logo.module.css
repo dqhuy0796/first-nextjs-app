@@ -1,0 +1,50 @@
+.logo{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-primary);
+    transform: translateZ(0);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.logo::before,
+.logo::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+}
+.logo::before {
+    animation: 3s rotate linear infinite;
+    width: 200%;
+    height: 200%;
+    background: var(--tile-border);
+}
+.logo::after {
+    inset: 0;
+    padding: 1px;
+    border-radius: 8px;
+    background: var(--color-light);
+    background-clip: content-box;
+}
+
+@media (prefers-reduced-motion) {
+    .logo::before {
+        animation: none;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform:rotate(360deg);
+    }
+    to {
+        transform:rotate(0deg);
+    }
+}
+/* translateY(-25%) translateX(-25%) 
+translateY(-25%) translateX(-25%)  */
